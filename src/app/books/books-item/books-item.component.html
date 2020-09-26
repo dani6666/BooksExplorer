@@ -1,0 +1,8 @@
+<div class="list-group-item d-flex flex-row justify-content-between">
+  <div>
+    {{ book.title }} <span [ngClass]="{'small':book.pagesCount < 200 }">({{book.pagesCount}})</span>
+  </div>
+  <div>
+  <button class="btn btn-sm btn-primary mr-2" (click)="showDescription = !showDescription">Toggle Description</button>
+  <button class="btn btn-sm btn-info" [routerLink]="['/books', book.id]">Show details</button></div></div>
+<div *ngIf="showDescription">{{book.longDescription}}</div>

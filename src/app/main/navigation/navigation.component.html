@@ -1,0 +1,24 @@
+
+
+<nav class="navbar navbar-expand navbar-dark bg-primary d-flex flex-row justify-content-between">
+  <div>
+    <a class="navbar-brand" href="#">Books Explorer</a>
+    <div class="nav navbar-nav">
+      <a class="nav-item nav-link" routerLink="/">Home </a>
+      <a class="nav-item nav-link" routerLink="/books">Books </a>
+      <a class="nav-item nav-link" routerLink="/contact">Contact </a>
+      <a *ngIf="isAdmin$ | async" class="nav-item nav-link" routerLink="/admin">Admin</a>
+    </div>
+  </div>
+  <div>
+    <ng-container *ngIf="authState$ | async as authState; else logout">
+      <span class="text-light mr-2">{{authState.username | uppercase}}</span> <button type="button" (click)="handleLogout()" class="btn btn-info">Logout</button>
+    </ng-container>
+
+    <ng-template #logout>
+      <button type="button" (click)="handleLogin()" class="btn btn-warning">Login</button>
+    </ng-template>
+
+
+  </div>
+</nav>

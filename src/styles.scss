@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+.ng-invalid:not(form).ng-touched {
+  border: red solid 2px;
+}
+
+.my-select, .select {
+  display: block;
+  border: 2px solid crimson;
+}
+
+.zindex-1000 {
+  z-index: 1000;
+}

@@ -1,0 +1,14 @@
+<div  *ngIf="isLoading$ | async"  class=" zindex-1000 d-flex justify-content-center align-items-center w-100 h-100 position-fixed bg-white">
+  <div class="spinner-border" role="status" style="width: 50px; height: 50px">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="card" *ngIf="bookDetails$ | async as book">
+  <div style="height: 200px; width: 200px;" class="m-4">
+    <img class="card-img-top" [src]="book.thumbnailUrl">
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{ book.title }}</h4>
+    <p class="card-text">{{ book.longDescription || 'No description for this book'}}</p>
+  </div>
+</div>
